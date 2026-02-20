@@ -6,7 +6,7 @@ const Recipes = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/recipes')
+    fetch(`${config.API_URL}/recipes`)
       .then((res) => res.json())
       .then((data) => setRecipes(Array.isArray(data) ? data : []))
       .catch((err) => console.error(err))
